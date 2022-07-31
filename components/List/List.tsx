@@ -7,7 +7,7 @@ export interface ListProps {
   }[]
 }
 
-export const List = ({ items = [{id: 1, title: 'title'}] }): JSX.Element => (
+export const List = ({ items = [{id: 1, title: 'title'}] }: ListProps): JSX.Element => (
 
   <ul>
     {items.map(item => (

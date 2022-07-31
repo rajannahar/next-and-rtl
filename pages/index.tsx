@@ -1,11 +1,24 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
-import { Button } from './../components/Button'
+import { Select } from "./../components/Select";
+import { SelectListBox } from "./../components/SelectListBox";
 
 const Home: NextPage = () => {
+  const props = {
+    label: "Choose a car",
+    id: "cars",
+    options: [
+      { id: 1, value: "BMW" },
+      { id: 2, value: "Audi" },
+      { id: 3, value: "Mercedes" },
+      { id: 4, value: "Volvo" },
+      { id: 5, value: "Vauxhall" },
+    ],
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,10 +32,20 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <Button>Button 1</Button>
+        <Select {...props} />
+
+        <SelectListBox
+          options={[
+            { id: 1, value: "Durward Reynolds" },
+            { id: 2, value: "Kenton Towne" },
+            { id: 3, value: "Therese Wunsch" },
+            { id: 4, value: "Benedict Kessler" },
+            { id: 5, value: "Katelyn Rohan" },
+          ]}
+        />
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
 
@@ -63,14 +86,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
