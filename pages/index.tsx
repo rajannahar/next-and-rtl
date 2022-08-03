@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -6,7 +7,11 @@ import styles from "../styles/Home.module.css";
 import { Select } from "./../components/Select";
 import { SelectListBox } from "./../components/SelectListBox";
 
+import { useApi } from "./../hooks/useApi/useApi";
+
 const Home: NextPage = () => {
+  useApi({ apiEndpoint: "/api/users" });
+
   const props = {
     label: "Choose a car",
     id: "cars",

@@ -6,4 +6,10 @@ module.exports = {
     "^@hooks(.*)$": "<rootDir>/hooks$1",
   },
   testEnvironment: "jest-environment-jsdom",
+  "reporters": [
+    "default",
+    ["./node_modules/jest-html-reporter", {
+      "pageTitle": "Test Report"
+    }]
+  ]
 };
